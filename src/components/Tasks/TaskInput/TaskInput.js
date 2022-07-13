@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Button from "../../UI/Button/Button";
-import "./TaskInput.css";
+import styles from "./TaskInput.module.css";
 
 const TaskInput = (props) => {
   const [inputText, setinputText] = useState("");
@@ -25,7 +25,7 @@ const TaskInput = (props) => {
 
   return (
     <form onSubmit={formSubmitHandler}>
-      <div className={`form-control ${!isInputValid?'invalid':''}`}>
+      <div className={`${styles['form-control']} ${!isInputValid && styles.invalid}`}>
         <label >Задачи</label>
         <input  type="text" onChange={taskInputChangeHandler} />
       </div>
